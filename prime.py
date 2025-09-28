@@ -55,7 +55,7 @@ def load_prime_items(file_name):
     file_path = os.path.join(os.path.dirname(__file__), file_name)
     with open(file_path, 'r') as file:
         data = json.load(file)
-    return [item for item in data if item.get('isPrime', False) == True]
+    return [item for item in data if "Prime" in item.get('name', '') and item.get('productCategory', '') == 'Suits']
 
 
 # Load prime items
